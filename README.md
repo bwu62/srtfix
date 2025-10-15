@@ -49,10 +49,11 @@ only dependency is the [srt](https://pypi.org/project/srt) package
 
 output file is always the input srt with "_fixed" appended at the end of the filename (if this name already exists, it will be overwritten without warning)
 
-## future todo
+## future ideas
 
 this file is currently a very simplistic mvp, future ideas of things to do:
 
 - auto detect encoding of input
 - add support for .ass subtitle files
+- stack 2 sub files for language learning
 - other?
