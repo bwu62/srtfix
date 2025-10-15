@@ -1,10 +1,14 @@
 # srtfix
 
-small &amp; simple script to fix srt subtitle timings
+small &amp; simple python3 script to fix srt subtitle timings
 
 ## motivation
 
 i watch a lot of movies and needed a short and simple script to fix misaligned or stretched srt files
+
+## dependency
+
+only dependency is the [`srt`](https://pypi.org/project/srt) package
 
 ## usage
 
