@@ -8,7 +8,7 @@ i watch a lot of movies and needed a short and simple script to fix misaligned o
 
 ## dependency
 
-only dependency is the [`srt`](https://pypi.org/project/srt) package
+only dependency is the [srt](https://pypi.org/project/srt) package
 
 ## usage
 
