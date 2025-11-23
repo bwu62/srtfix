@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import argparse,srt,datetime
+import argparse,srt,datetime,magic
 
 # define t=1000microseconds, used later to convert srt package's output from microseconds to milliseconds (ms)
 t = datetime.timedelta(microseconds=1000)
@@ -25,8 +25,14 @@ parser.add_argument('-l', '--linear', type=str, default=None, nargs=4, help='lin
 parser.add_argument('-D', '--delays', type=str, default=None, nargs=4, help='delays map: t1 delay1(ms) t2 delay2(ms)')
 args = parser.parse_args()
 
-# read in subtitle file assuming utf-8 encoding
-with open(args.file,'r',encoding='utf-8') as f:
+# use magic to detect encoding
+blob = open(args.file, 'rb').read()
+m = magic.open(magic.MAGIC_MIME_ENCODING)
+m.load()
+encoding = m.buffer(blob)
+
+# read in subtitle file using detected encoding
+with open(args.file,'r',encoding=encoding) as f:
     lines = f.readlines()
 
 # use srt package to parse and check sort/index of each subtitle entry
